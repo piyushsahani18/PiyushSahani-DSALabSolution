@@ -21,17 +21,21 @@ public class LongestPathBTree {
 	// Function to Find the longest path of the binary tree
 	public static ArrayList<Integer> longestPath(Node root) {
 		if (root == null) {
-			ArrayList<Integer> output = new ArrayList<>();
-			return output;
+			ArrayList<Integer> path = new ArrayList<>();  // to store the longest path
+			return path;
 		}
-		ArrayList<Integer> right = longestPath(root.right); // if left longest path
-		ArrayList<Integer> left = longestPath(root.left); // if right longest path
+		ArrayList<Integer> right = longestPath(root.right);  // if left longest path
+		ArrayList<Integer> left = longestPath(root.left);    // if right longest path
 		if (right.size() < left.size()) {
 			left.add(root.data);
 		} else {
 			right.add(root.data);
 		}
-		return (left.size() > right.size() ? left : right);
+		if (left.size() > right.size()){
+			return left;
+	        else 
+			return right;
+		  }
 	}
 
 	// Driver Class
@@ -45,11 +49,11 @@ public class LongestPathBTree {
 		root.left.left = newNode(10);
 		root.left.right = newNode(50);
 		root.left.left.left = newNode(5);
-		ArrayList<Integer> output = longestPath(root);
-		int n = output.size();
-		System.out.print(output.get(n - 1));
+		ArrayList<Integer> path = longestPath(root);
+		int n = path.size();
+		System.out.print(path.get(n - 1));
 		for (int i = n - 2; i >= 0; i--) {
-			System.out.print(" -> " + output.get(i));
+			System.out.print(" -> " + path.get(i));
 		}
 	}
 }
