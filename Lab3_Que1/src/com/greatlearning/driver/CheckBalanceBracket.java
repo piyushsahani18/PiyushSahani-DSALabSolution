@@ -11,19 +11,16 @@ import java.util.Stack;
 // Basic Logic:-
 // 1. Take Brackets-Input in the form of String
 // 2. Convert the String into Character Array and store in Array.
-// 3. If the length of array is odd, then brackets incomplete... hence
-// unbalanced -return false
+// 3. If the length of array is odd, then brackets incomplete, hence unbalanced ->return false
 // 4. Iterate the Array using while loop.
-// (i) If opening braces encountered push into a stack.
-// (ii) If closing braces encountered
-// (i) pop and store it in variable.
-// 5. (a) if pop element is other than combination required
-// -> unbalanced - return false
-// (b) if pop element is combination required
-// -> break -switch statements... continue while loop
+//    (i)  If opening braces encountered -> push into a stack. 
+//    (ii) Check if stack is empty -> return false... unbalanced else step->(iii)
+//    (iii) If closing braces encountered -> pop and store it in variable
+// 5. (a) if pop element is other than combination required -> unbalanced - return false
+//    (b) if pop element is combination required -> break -switch statements... continue while loop
 // 6. Finally after while loop iteration complete
-// (i) if stack empty -> return true ...Balanced
-// (ii)if stack not -empty -> return false ...Unbalanced
+//       =>(i)  if stack empty -> return true ...Balanced
+//       =>(ii) if stack not-empty -> return false ...Unbalanced
 
 public class CheckBalanceBracket {
 
