@@ -31,11 +31,10 @@ public class LongestPathBTree {
 		} else {
 			right.add(root.data);
 		}
-		if (left.size() > right.size()){
+		if (left.size() > right.size())
 			return left;
 	        else 
 			return right;
-		  }
 	}
 
 	// Driver Class
